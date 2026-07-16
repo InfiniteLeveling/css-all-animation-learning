@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #2f3542;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.animated-text{
+    font-size: 35px;
+    font-weight: 600;
+}
+.animated-text span{
+    position: relative;
+}
+.animated-text span::before{
+    content: "web developer";
+    color: #ff7f50;
+    animation: words 16s infinite;
+}
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: calc(100% + 8px);
+    background-color: #2f3542;
+    border-left: 2px #ff7f50 solid;
+    right: -8px;
+    animation: cursor .8s infinite , typing 16s steps(14) infinite;
+}
+@keyframes cursor {
+    to{
+        border-left:#2f3542 ;
+    }
+}
+@keyframes words {
+    0%,20%{
+        content: "frontend developer";
+    }
+    21%,40%{
+        content: "backend developer";
+    }
+    41%,60%{
+        content: "full-stack developer";
+    }
+    61%,80%{
+        content: "gamer";
+    }
+    81%,100%{
+        content: "learner";
+    }
+}   
+@keyframes typing {
+        10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+            width: 0;
+        }
+        5%,20%,25%,40%,45%,60%,65%,80%,85%{
+            width: calc(100% + 8px);
+        }
+}
